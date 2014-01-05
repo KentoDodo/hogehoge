@@ -1,7 +1,8 @@
 +(NSString*)sendImage:(UIImage*)_image url:(NSString*)url {
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:TIMEOUT_INTERVAL];
     request.HTTPMethod=@"POST";
-    request.HTTPBody=[[NSString stringWithFormat:@"image=%@",[self image2string:_image]] dataUsingEncoding:NSUTF8StringEncoding];
+    //    request.HTTPBody=[[NSString stringWithFormat:@"image=%@",[self image2string:_image]] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPBody=[[NSData alloc] initWithData:UIImagePNGRepresentation(_image)];
     NSError *error=nil;
     NSData *response=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
     if (error) {
