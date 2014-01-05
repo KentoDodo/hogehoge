@@ -65,16 +65,24 @@
 	
 	//setting up the body:
 	NSMutableData *postBody = [NSMutableData data];
-	[postBody appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[@"Content-Disposition: form-data; name=\"email\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[mail dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    NSString *fileName=[NSString stringWithFormat:@"%@.png",[ViewController createFileName]];
-    NSString *conData=[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",@"image",fileName];
+    // 名前
+    [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", @"name"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[@"Jane" dataUsingEncoding:NSUTF8StringEncoding]];
+    // メール
+	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", @"mail"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[@"hogehoge@piyo.com" dataUsingEncoding:NSUTF8StringEncoding]];
+    // 画像部分
+	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *imageName=@"image";
+    NSString *imageFileName=[NSString stringWithFormat:@"%@.png",[ViewController createFileName]];
+    NSString *conData=[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",imageName,imageFileName];
 	[postBody appendData:[conData dataUsingEncoding:NSUTF8StringEncoding]];
 	[postBody appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[postBody appendData:imgData];
 	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
 	[postRequest setHTTPBody:postBody];
     
     NSError *error=nil;
