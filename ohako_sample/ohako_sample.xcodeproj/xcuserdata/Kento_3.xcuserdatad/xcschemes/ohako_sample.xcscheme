@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE3B2C1F18791C1600427D83"
-               BuildableName = "ohako_sample_imagePicker.app"
+               BuildableName = "ohako_sample.app"
                BlueprintName = "ohako_sample"
                ReferencedContainer = "container:ohako_sample.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE3B2C4018791C1700427D83"
-               BuildableName = "ohako_sample_imagePickerTests.xctest"
+               BuildableName = "ohako_sampleTests.xctest"
                BlueprintName = "ohako_sampleTests"
                ReferencedContainer = "container:ohako_sample.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3B2C1F18791C1600427D83"
-            BuildableName = "ohako_sample_imagePicker.app"
+            BuildableName = "ohako_sample.app"
             BlueprintName = "ohako_sample"
             ReferencedContainer = "container:ohako_sample.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3B2C1F18791C1600427D83"
-            BuildableName = "ohako_sample_imagePicker.app"
+            BuildableName = "ohako_sample.app"
             BlueprintName = "ohako_sample"
             ReferencedContainer = "container:ohako_sample.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3B2C1F18791C1600427D83"
-            BuildableName = "ohako_sample_imagePicker.app"
+            BuildableName = "ohako_sample.app"
             BlueprintName = "ohako_sample"
             ReferencedContainer = "container:ohako_sample.xcodeproj">
          </BuildableReference>
