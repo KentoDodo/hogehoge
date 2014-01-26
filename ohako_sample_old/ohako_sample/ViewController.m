@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CropImageController.h"
 
 @interface ViewController () {
     UIImagePickerController *ipc;
@@ -58,14 +59,8 @@
     
     cropController=[[CropImageController alloc] init];
     cropController.image=image;
-    cropController.CropImageControllerDelegate=self;
+    
     [picker pushViewController:cropController animated:YES];
-}
-
--(void)set_cropImage:(UIImage*)cropImage originalImage:(UIImage*)originalImage {
-    iv.frame=CGRectMake(0,0,300,300*cropImage.size.height/cropImage.size.width);
-    iv.image=cropImage;
-    iv.center=self.view.center;
 }
 
 -(void)targetImage:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)context{

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CropImageController.h"
 
-@interface ViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CropImageControllerDelegate,NSURLSessionDelegate>
 
 @end
